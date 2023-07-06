@@ -95,10 +95,10 @@ for _ in range(word_length):
     display += "_"
 
 while not end_of_game:
-    guess = input("Guess a letter: ").lower()
+    guess = input("escolha uma letra: ").lower()
 
     if guess in display:
-        print(f"You've already guessed {guess}")
+        print(f"você já escolheu {guess}")
 
     
     for position in range(word_length):
@@ -108,17 +108,17 @@ while not end_of_game:
 
     
     if guess not in chosen_word:
-        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        print(f"Você escolheu: {guess}, esta não está na palavra. você perdeu uma vida.")
 
         lives -= 1
         if lives == 0:
             end_of_game = True
-            print("You lose.")
+            print("Você Perdeu.")
 
     print(f"{' '.join(display)}")
 
     if "_" not in display:
         end_of_game = True
-        print("You win.")
+        print("Você Ganhou.")
 
     print(stages[lives])
